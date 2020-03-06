@@ -1,6 +1,5 @@
 package org.superbiz.moviefun;
 
-import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,7 +10,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.orm.jpa.vendor.Database;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 
-import javax.sql.DataSource;
 
 @SpringBootApplication(exclude = {
         DataSourceAutoConfiguration.class,
@@ -32,20 +30,6 @@ public class Application {
     public DatabaseServiceCredentials getDatabaseServiceCredentials( @Value("${vcap.services}") String vcapServices  ){
         return new DatabaseServiceCredentials(vcapServices);
     }
-
-    /*
-    @Bean
-    public DataSource albumsDataSource(DatabaseServiceCredentials serviceCredentials) {
-        MysqlDataSource dataSource = new MysqlDataSource();
-        dataSource.setURL(serviceCredentials.jdbcUrl("albums-mysql"));
-        return dataSource;
-    }
-    @Bean
-    public DataSource moviesDataSource(DatabaseServiceCredentials serviceCredentials) {
-        MysqlDataSource dataSource = new MysqlDataSource();
-        dataSource.setURL(serviceCredentials.jdbcUrl("movies-mysql"));
-        return dataSource;
-    } */
 
     @Bean
     HibernateJpaVendorAdapter jpaVendorAdapter() {
