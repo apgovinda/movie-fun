@@ -40,14 +40,12 @@ public class Application {
         dataSource.setURL(serviceCredentials.jdbcUrl("albums-mysql"));
         return dataSource;
     }
-
     @Bean
     public DataSource moviesDataSource(DatabaseServiceCredentials serviceCredentials) {
         MysqlDataSource dataSource = new MysqlDataSource();
         dataSource.setURL(serviceCredentials.jdbcUrl("movies-mysql"));
         return dataSource;
     } */
-
 
     @Bean
     HibernateJpaVendorAdapter jpaVendorAdapter() {

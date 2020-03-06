@@ -18,6 +18,14 @@ import javax.sql.DataSource;
 @Configuration
 public class MoviesDatabaseConfig {
 
+    /*
+    @Bean
+    public DataSource moviesDataSource(DatabaseServiceCredentials serviceCredentials) {
+        MysqlDataSource dataSource = new MysqlDataSource();
+        dataSource.setURL(serviceCredentials.jdbcUrl("movies-mysql"));
+        return dataSource;
+    } */
+
     @Bean
     public DataSource moviesDataSource(DatabaseServiceCredentials serviceCredentials) {
         MysqlDataSource dataSource = new MysqlDataSource();
