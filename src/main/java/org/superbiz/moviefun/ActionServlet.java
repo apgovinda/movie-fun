@@ -32,6 +32,8 @@ import java.util.List;
 /**
  * @version $Revision$ $Date$
  */
+
+
 @Component
 public class ActionServlet extends HttpServlet {
 
@@ -56,7 +58,6 @@ public class ActionServlet extends HttpServlet {
         String action = request.getParameter("action");
 
         if ("Add".equals(action)) {
-
             String title = request.getParameter("title");
             String director = request.getParameter("director");
             String genre = request.getParameter("genre");
