@@ -17,8 +17,8 @@ public class RabbitConfig {
     @Bean
     public IntegrationFlow amqpInbound(ConnectionFactory connectionFactory, AlbumsUpdateMessageConsumer consumer) {
         return IntegrationFlows
-                .from(Amqp.inboundAdapter(connectionFactory, rabbitMqQueue))
-                .handle(consumer::consume)
-                .get();
+            .from(Amqp.inboundAdapter(connectionFactory, rabbitMqQueue))
+            .handle(consumer::consume)
+            .get();
     }
 }
